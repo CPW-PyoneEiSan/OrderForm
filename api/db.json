@@ -1,0 +1,32 @@
+{
+    "orders": [
+      {
+        "id": 1,
+        "orderdate": "2012-10-16T17:57:28.556094Z",
+        "orderstatus": "Processing",
+        "shppingName": "ABC",
+        "shippingContact": "Alex",
+        "shippingAddress": "123, Upper Block Street",
+        "product":[
+          {
+            "productid":"1",
+            "productname":"Hair Dryer",
+            "productprice":"1200"
+          },
+          {
+            "productid":"2",
+            "productname":"Shampoo",
+            "productprice":"500"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "orderdate": "2012-10-16T17:57:28.556094Z",
+        "orderstatus": "Pending Payment",
+        "shppingName": "ABC",
+        "shippingContact": "Alex",
+        "shippingAddress": "123, Upper Block Street"
+      }
+    ]
+  }

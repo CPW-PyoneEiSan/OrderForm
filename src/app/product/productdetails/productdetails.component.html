@@ -1,0 +1,83 @@
+<form [formGroup]="ProductForm" (ngSubmit)="onSubmitProduct()">
+    <div class="form-group">
+      <label>Add Product</label>
+      <table class="table table-hover table-borderless"> 
+        <thead class="row-heading">
+          <tr>
+            <th>
+              Product Name
+            </th>
+            <th>
+              Product Price
+            </th>
+            <th>
+
+            </th>
+          </tr>
+        </thead>
+        <tbody
+        class="row-body"
+        *ngFor="let p of producttable">
+      <tr>
+        <th>
+          {{p.productname}}
+        </th>
+        <th>
+          {{p.productprice}}
+        </th>
+        <th>
+          <!-- <a
+          class="tr-icon pencil"
+          tooltip="Edit items"
+          *ngIf="!p.isEdit"
+          (click)="enableEditMethod(p)"
+          ></a>
+          <span *ngIf="p.isEdit">
+            <a
+            class="tr-icon check-circle-fill" 
+            tooltip="Update"
+            (click)="onUpdateButtonClick(p)"
+            ></a>
+            <a
+            class="tr-icon x-circle-fill" 
+            tooltip="Cancel"
+            (click)="p.isEdit = false"
+            ></a>
+            </span>  -->
+        </th>
+      </tr>
+        </tbody>
+      
+          
+      <tbody class="row-body"  >
+        <tr>
+          <th>
+            <div class="form-group">
+              <input type="text" formControlName="productName" #productName class="form-control" [ngClass]="{ 'is-invalid': productadded && ProductForm.controls.productName.errors }"  />
+              <div *ngIf="productadded && ProductForm.controls.productName.errors" class="text-danger">
+              <div *ngIf="ProductForm.controls.productName.errors.required">Product Name is required</div>              
+              <div *ngIf="ProductForm.controls.productName.errors.maxlength">Product Name must be max 30 characters</div>
+              </div>
+              </div>
+          </th>
+          <th>
+            <div class="form-group">
+              <input type="text" formControlName="productPrice" #productPrice class="form-control" [ngClass]="{ 'is-invalid': productadded && ProductForm.controls.productPrice.errors }"  />
+              <div *ngIf="productadded && ProductForm.controls.productPrice.errors" class="text-danger">
+              <div *ngIf="ProductForm.controls.productPrice.errors.required">Product Price is required</div>
+              <div *ngIf="ProductForm.controls.productPrice.errors.pattern">Number Only</div>
+              </div>
+              </div>
+        </th>
+        <th>
+          <div class="form-group">  
+            <button class="btn btn-primary">ADD</button>
+            </div>
+        </th>
+        </tr>
+      </tbody>
+    
+ 
+      </table>
+    </div>
+  </form>
